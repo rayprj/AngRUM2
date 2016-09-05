@@ -1,4 +1,4 @@
-angular.module('angrum.crud').controller('crudController', function($scope, appModel, appUtils) {
+angular.module('angrum.crud').controller('crudController', function($scope, appModel, appUtils, $routeParams) {
     $scope.viewUtil    = appUtils;
     
 
@@ -7,12 +7,13 @@ angular.module('angrum.crud').controller('crudController', function($scope, appM
     };
 
     /** get the data from server */
-    appModel.getData('server/stories.json').then(function(d) {
+    var moduleName = $routeParams.moduleName;
+    appModel.getData('server/'+moduleName+'.json').then(function(d) {
             $scope.stories = d.data;
         }
     );
     /** get the fieldMap from the server to form the HTML fields */
-    appModel.getData('server/stories.fieldmap.json', true).then(function(d) {
+    appModel.getData('server/'+moduleName+'.fieldmap.json', true).then(function(d) {
             $scope.fieldMap = d.data;
         }
     );
