@@ -10,22 +10,14 @@
     </head>
 
     <body>
-        <div class="col-md-1 nopadding" ng-controller="appController">
-
+        <div class="col-md-2 nopadding" ng-controller="appController">
             <ul class="nav nav-pills nav-stacked nopadding">
-                <li class="active">
-                    <a href="#/crud/stories" class="btn btn-info btn-sm btn-block">
-                    <span class="glyphicon glyphicon-book"></span> Stories
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="#/crud/tasks" class="btn btn-info btn-sm btn-block">
-                    <span class="glyphicon glyphicon-tasks"></span> Tasks
+                <li ng-repeat="m in menus.modules">
+                    <a href="#/crud/{{m.name}}" class="btn btn-info btn-sm btn-block">
+                    <span class="glyphicon glyphicon-{{m.icon}}"></span> {{m.label}}
                     </a>
                 </li>
             </ul>
-
         </div>
 
         <div ng-view=""></div>
