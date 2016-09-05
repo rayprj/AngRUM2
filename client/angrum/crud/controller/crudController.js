@@ -1,19 +1,18 @@
 angular.module('angrum.crud').controller('crudController', function($scope, appModel, appUtils, $routeParams) {
     $scope.viewUtil    = appUtils;
-    
+    $scope.params = $routeParams;
 
     $scope.setScope = function(scopeVar, scopeValue) {
         $scope[scopeVar] = scopeValue;
     };
 
     /** get the data from server */
-    var moduleName = $routeParams.moduleName;
-    appModel.getData('server/'+moduleName+'.json').then(function(d) {
+    appModel.getData('server/'+$scope.params.moduleName+'.json').then(function(d) {
             $scope.stories = d.data;
         }
     );
     /** get the fieldMap from the server to form the HTML fields */
-    appModel.getData('server/'+moduleName+'.fieldmap.json', true).then(function(d) {
+    appModel.getData('server/'+$scope.params.moduleName+'.fieldmap.json', true).then(function(d) {
             $scope.fieldMap = d.data;
         }
     );

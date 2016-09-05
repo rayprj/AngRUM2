@@ -1,15 +1,14 @@
 <div class="col-md-3 nopadding">
     <div class="panel panel-info nopadding">
-    <div class="panel-heading nopadding">Stories</div>
+    <div class="panel-heading nopadding"><h4>{{params.moduleName}}</h4></div>
     <div class="panel-body nopadding">
-        <crud-list ng-repeat="story in stories" ng-click="setStory(story)"></crud-listr>
+        <crud-list ng-repeat="story in stories"  ng-click="setStory(story)"></crud-listr>
     </div>
     </div>
 </div>
 
-<div class="col-md-7 nopadding content">
+<div class="col-md-6 nopadding content">
     <div ng-if="currentStory" class="panel panel-primary nopadding">
-        <div class="panel-heading nopadding">Story</div>
             <div class="panel-body nopadding">
                 <div>
                     <a ng-if="currentView=='detail'" ng-click="setScope('currentView', 'edit')" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 

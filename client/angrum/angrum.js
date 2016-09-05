@@ -6,6 +6,10 @@ angular.module('angrum', ['ngRoute', 'angrum.common', 'angrum.crud'])
         templateUrl: 'client/angrum/crud/templates/index.html',
         controller: 'crudController'
     })
+    $routeProvider.when('/crud/:moduleName/:id', {
+        templateUrl: 'client/angrum/crud/templates/detail-edit.html',
+        controller: 'crudController'
+    })
 
     .otherwise({redirectTo: '/'});
 

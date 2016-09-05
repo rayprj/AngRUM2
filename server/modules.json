@@ -1,11 +1,13 @@
 [{"name":"stories", 
 "label": "User Stories",
 "description": "User Stories captured in this module",
+"icon": "book",
 "acl": ""
 },
 {"name":"tasks", 
 "label":"Tasks",
 "description": "Tasks to complete the stories captured in this module",
+"icon": "tasks",
 "acl": ""
-},
+}
 ]
