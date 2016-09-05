@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="angrum">
+    <head>
+        <base href="/">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="client/angrum/app.css" />
+        <script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
+        <script src="client/assets/js/boot.js"></script>
+        <title>AngRUM</title>
+    </head>
+
+    <body>
+        <div ng-controller="appController">
+            <a href="#/crud/stories">Stories</a>
+            <a href="#/crud/tasks">Tasks</a>
+        </div>
+
+        <div ng-view=""></div>
+
+    </body>
+
+</html>

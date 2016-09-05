@@ -1,0 +1,28 @@
+<div ng-click="setScope('currentView', 'edit')" class="form-group">
+    <div ng-switch="fieldMap[field].type">
+        <label ng-if="fieldMap[field].type!='id'" for="{{field}}">{{viewUtil.title(field)}}</label>
+
+        <input ng-readonly="isReadOnly()"  ng-switch-when="text" type="text" class="form-control" id={{field}} ng-model="currentStory[field]" />
+        <input ng-readonly="isReadOnly()" ng-switch-when="number" type="number" class="form-control" id={{field}} ng-model="currentStory[field]" />
+        <input ng-readonly="isReadOnly()" ng-switch-when="date" type="date" class="form-control" id={{field}} ng-model="currentStory[field]" />
+
+        <textarea ng-readonly="isReadOnly()" ng-switch-when="textarea" class="form-control" id={{field}} ng-model="currentStory[field]"></textarea>
+
+        <div ng-switch-when="radio"  class="form-control">
+            <label class="radio-inline" ng-repeat="(value, label) in fieldMap[field].values">
+                <input ng-disabled="isReadOnly()" type="radio" ng-model="currentStory[field]" ng-value="{{value}}" >
+                {{label}}
+            </label> 
+        </div>
+
+
+
+        <select ng-disabled="isReadOnly()" ng-readonly="isReadOnly()" ng-switch-when="select" id={{field}} class="form-control" ng-model="currentStory[field]" ng-options="k as v for (k, v) in fieldMap[field].values"></select>
+
+        <div ng-switch-when="related">
+            <div ng-repeat="val in currentStory[field]">
+                <a href="{{fieldMap[field].relatedTo}}/{{val.id}}">{{val.title}}</a> <!-- TODO -->
+            </div>
+        </div>
+    </div>
+</div>
