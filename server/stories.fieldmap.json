@@ -3,8 +3,8 @@
     "isActive": {"type":"radio", "values":{"true":"Active", "false":"InActive" }},
     "storyPoints": {"type":"number"},
     "status": {"type":"select", "values": {"new":"New", "approved":"Approved", "inprogress":"In progress", "done":"Done"} },
-    "title": {"type": "text"},
-    "descritption": {"type": "textarea"},
+    "title": {"type": "text","sidebar":{"title":true}},
+    "descritption": {"type": "textarea", "sidebar":{"list":true}},
     "tags": {"type": "text"},
     "relatedStories": {"type":"related", "relatedto": "story"},
     "dateCreated": {"type":"date"}

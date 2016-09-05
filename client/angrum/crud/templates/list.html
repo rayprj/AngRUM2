@@ -1,8 +1,5 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-    {{story.title}}
-    </div>
-    <div class="panel-body">
-        {{story.descritption}}
+<div class="panel panel-default nopadding">
+    <div ng-repeat="(field, value) in story" ng-if="fieldMap[field].sidebar" ng-class="{'panel-heading': fieldMap[field].sidebar.title, 'panel-body':fieldMap[field].sidebar.list}" class="nopadding">
+        {{story[field]}}
     </div>
 </div>

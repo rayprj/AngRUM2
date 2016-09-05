@@ -3,16 +3,29 @@
     <head>
         <base href="/">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="client/angrum/app.css" />
+        <link rel="stylesheet" href="client/assets/css/app.css" />
         <script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
         <script src="client/assets/js/boot.js"></script>
         <title>AngRUM</title>
     </head>
 
     <body>
-        <div ng-controller="appController">
-            <a href="#/crud/stories">Stories</a>
-            <a href="#/crud/tasks">Tasks</a>
+        <div class="col-md-1 nopadding" ng-controller="appController">
+
+            <ul class="nav nav-pills nav-stacked nopadding">
+                <li class="active">
+                    <a href="#/crud/stories" class="btn btn-info btn-sm btn-block">
+                    <span class="glyphicon glyphicon-book"></span> Stories
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#/crud/tasks" class="btn btn-info btn-sm btn-block">
+                    <span class="glyphicon glyphicon-tasks"></span> Tasks
+                    </a>
+                </li>
+            </ul>
+
         </div>
 
         <div ng-view=""></div>

@@ -1,0 +1,10 @@
+{
+    "_id": {"type":"id"},
+    "isActive": {"type":"radio", "values":{"true":"Active", "false":"InActive" }},
+    "status": {"type":"select", "values": {"new":"New", "inprogress":"In progress", "codeready":"Code ready", "testing":"Testing", "done":"Done"} },
+    "name": {"type": "text", "sidebar":{"title":true}},
+    "descritption": {"type": "textarea", "sidebar":{"list":true}},
+    "ownedBy": {"type":"related", "relatedto": "users"},
+    "parentStory": {"type":"related", "relatedto": "stories"},
+    "dateCreated": {"type":"date"}
+}
