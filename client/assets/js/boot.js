@@ -3,6 +3,7 @@ head.load(
     {file: 'bower_components/bootstrap/dist/js/bootstrap.min.js'},
     {file: 'bower_components/angular/angular.min.js'},
     {file: 'bower_components/angular-route/angular-route.min.js'},
+    {file: 'bower_components/angular-ui-router/release/angular-ui-router.min.js'},
 
     {file: 'client/angrum/app/app.js'},
     {file: 'client/angrum/app/services/appModel.js'},

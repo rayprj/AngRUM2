@@ -2,23 +2,10 @@
     <div class="panel panel-info nopadding">
     <div class="panel-heading nopadding"><h4>{{params.moduleName}}</h4></div>
     <div class="panel-body nopadding">
-        <crud-list ng-repeat="story in stories"  ng-click="setStory(story)"></crud-listr>
+        <crud-list ng-repeat="story in stories"></crud-list>
     </div>
     </div>
 </div>
 
-<div class="col-md-6 nopadding content">
-    <div ng-if="currentStory" class="panel panel-primary nopadding">
-            <div class="panel-body nopadding">
-                <div>
-                    <a ng-if="currentView=='detail'" ng-click="setScope('currentView', 'edit')" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 
-                    <a ng-if="currentView=='edit'" ng-click="save()" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-save"></span> Save</a>
-                    <a ng-if="currentView=='edit'" ng-click="reset()" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-refresh"></span> Reset</a>
-                    <a ng-if="currentView=='edit'" ng-click="setScope('currentView', 'detail')" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-eye-open"></span> Cancel</a>
-                </div>
+<ui-view></ui-view>
 
-                <crud-detail-edit ng-repeat="(field, value) in currentStory"></crud-detail-edit>
-            </div>
-    </div>
-    
-</div>

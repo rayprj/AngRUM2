@@ -1,5 +1,5 @@
 <div class="panel panel-default nopadding">
     <div ng-repeat="(field, value) in story" ng-if="fieldMap[field].sidebar" ng-class="{'panel-heading': fieldMap[field].sidebar.title, 'panel-body':fieldMap[field].sidebar.list}" class="nopadding">
-        <a ng-href="#/crud/{{params.moduleName}}/343434">{{story[field]}}</a>
+        <a ng-href="#/crud/{{params.moduleName}}/{{story['_id']}}">{{story[field]}}</a>
     </div>
 </div>
