@@ -9,5 +9,11 @@
 "description": "Tasks to complete the stories captured in this module",
 "icon": "tasks",
 "acl": ""
+},
+{"name":"users", 
+"label":"Users",
+"description": "Tasks to complete the stories captured in this module",
+"icon": "users",
+"acl": ""
 }
 ]
